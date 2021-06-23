@@ -1,18 +1,45 @@
 {
-  "name": "http-errors",
+  "name": "@bbolt/http-errors",
   "version": "0.1.0",
   "description": "A library of errors for Node webservers.",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "tsc",
+    "poststart": "copy dist\\index.js index.js /a"
   },
   "author": "Ben Bolthouse",
   "license": "ISC",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
     "chai": "^4.3.4",
     "dotenv": "^10.0.0",
     "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
     "mocha": "^9.0.1",
     "typescript": "^4.3.4"
-  }
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "airbnb-base"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "rules": {},
+    "ignorePatterns": [
+      "index.js"
+    ]
+  },
+  "dependencies": {}
 }
